@@ -1,0 +1,8 @@
+ABC average is 1.0
+XYZ average is 2.0
+A average is 1.6
+B average is 1.0
+C average is 1.0
+Year 2000 (2): 111 211 
+Year 2010 (2): 112 212 
+Year 2020 (5): 113 213 321 322 323 
