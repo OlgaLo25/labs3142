@@ -8,9 +8,9 @@
 using namespace std;
 int main()
 {
-    string input;
-    printf("Please enter the expression\n");
-    cin >> input;
+    string input = "10+5*2-(3*sqrt(4))";
+    // printf("Please enter the expression\n");
+    // cin >> input;
     vector<string> resultLine = splitLine(input);
     
     Postfix postfixres;

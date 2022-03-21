@@ -14,7 +14,7 @@ BIN_TEST = $(BINDIR)/lab2Test
 INCLUDE = -I include
 INCLUDE_TEST:= -I cppunit
 
-LD_LIBRARY_PATH=/usr/local/lib
+#LD_LIBRARY_PATH=/usr/local/lib
 #Getting files in folders
 SRCS = $(wildcard $(SRC)/*.cpp)
 OBJS = $(patsubst $(SRC)/%.cpp, $(OBJ)/%.o, $(SRCS))
@@ -29,7 +29,6 @@ OBJS_TEST= $(filter-out $(OBJ)/main.o, $(OBJS)) $(SRCS_TEST:$(SRC_TEST)/%.cpp=$(
 
 
 lab2:$(BIN)
-	echo $LD_LIBRARY_PATH
 
 $(BIN): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@ && ./$(BIN)
