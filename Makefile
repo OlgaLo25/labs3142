@@ -26,9 +26,10 @@ OBJS_TEST= $(filter-out $(OBJ)/main.o, $(OBJS)) $(SRCS_TEST:$(SRC_TEST)/%.cpp=$(
 
 #SUBMITNAME = project.zip
 
-#echo $LD_LIBRARY_PATH
+
 
 lab2:$(BIN)
+	echo $LD_LIBRARY_PATH
 
 $(BIN): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@ && ./$(BIN)
