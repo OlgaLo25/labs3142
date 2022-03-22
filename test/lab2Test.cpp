@@ -23,13 +23,16 @@ public:
 protected:
 
   void testLab2(void) {
-    vector<string> resultLine = splitLine("1+2*3");
+    char inputExample[] = "1+2*3^3-7+(2-3)";
+    printf("The expression is: %s\n",inputExample);
+
+    vector<string> resultLine = splitLine("1+2*3^3-7+(2-3)");
     
     Postfix postfixres;
     vector<Lexem> resultVector = postfixres.getResultStack(resultLine);
     Calculation calc;
        
-    CPPUNIT_ASSERT(calc.getCalculation(resultVector)==7.000);
+    CPPUNIT_ASSERT(calc.getCalculation(resultVector)==47.000);
   }
 
 };
