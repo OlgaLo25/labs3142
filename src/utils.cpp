@@ -1,18 +1,37 @@
 #include "utils.h"
 #include <string>
 #include <sstream>
-#include <iostream>
 using namespace std;
 
-bool isOperand(string part)
+bool isOperandLine(string type)
 {
 
-    if (part == "+" || part == "-" || part == "/" || part == "*" || part == "(" || part == ")" || part == "sqrt" || part == "^")
+    if (type == "+" || type == "-" || type == "/" || type == "*" || type == "(" || type == ")" || type == "sqrt" || type == "^")
     {
         return true;
     }
 
     return false;
+}
+
+bool isOperand(Lexem lex)
+{
+
+    if (lex.op == lex.ADD || lex.op == lex.SUBSTRACT || lex.op == lex.DIVIDE || lex.op == lex.MULTIPLY || lex.op == lex.OPEN_BRACKET || lex.op == lex.SQRT || lex.op == lex.POW)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+bool checkTwoSigns(vector<string> input){
+    for(int i=0;i<input.size();i++){
+        if(input[i]==""){
+            return false;
+        }
+    }
+    return true;
 }
 
 vector<string> splitLine(string input)
@@ -45,13 +64,16 @@ vector<string> splitLine(string input)
             result += input[i];
         }
     }
-    return split(result, ' ');
+
+    vector<string> resultVector = split(result, ' ');
+ 
+    return resultVector;
 }
 
-vector<string> split(string s, char delim)
+vector<string> split(string line, char delim)
 {
     vector<string> result;
-    stringstream streamName(s);
+    stringstream streamName(line);
     string item;
 
     while (getline(streamName, item, delim))

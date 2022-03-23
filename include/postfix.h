@@ -15,7 +15,8 @@ class Postfix
 private:
     vector<Lexem> result;
     stack<Lexem> operators;
-    int priority(string operand);
+    int priorityLine(string operand);
+    int priorityLexem(Lexem lex);
 public:
     vector<Lexem> getResultStack(vector<string> line);
 };

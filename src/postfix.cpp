@@ -1,7 +1,25 @@
 #include "postfix.h"
-#include <iostream>
 using namespace std;
-int Postfix::priority(string operand)
+
+int Postfix::priorityLexem(Lexem lex)
+{
+    if (lex.op == lex.ADD || lex.op == lex.SUBSTRACT)
+    {
+        return 1;
+    }
+    else if (lex.op == lex.MULTIPLY || lex.op == lex.DIVIDE)
+    {
+        return 2;
+    }
+    else if (lex.op == lex.SQRT || lex.op == lex.POW)
+    {
+        return 3;
+    }
+
+    return 0;
+}
+
+int Postfix::priorityLine(string operand)
 {
     if (operand == "+" || operand == "-")
     {
@@ -15,7 +33,7 @@ int Postfix::priority(string operand)
     {
         return 3;
     }
-    // Add sqrt and pow
+
     return 0;
 }
 
@@ -23,26 +41,46 @@ vector<Lexem> Postfix::getResultStack(vector<string> line)
 {
     for (int i = 0; i < line.size(); i++)
     {
-        if (!isOperand(line[i]))
+        if (!isOperandLine(line[i]))
         {
             // push //top //pop
             stringstream ss;
             double number;
             ss << line[i];
             ss >> number;
-            Lexem lex{"0", number};
+            Lexem lex{Lexem::NUMBER, number};
             result.push_back(lex);
         }
         else
         {
+            Lexem lex;
             string type = line[i];
-            Lexem lex{type, 0};
+            if(type=="("){
+                lex.op = Lexem::OPEN_BRACKET;
+            }
+            else if(type == "+"){
+                lex.op = Lexem::ADD;
+            }
+            else if(type == "-"){
+                lex.op = Lexem::SUBSTRACT;
+            }
+            else if(type == "*"){
+                lex.op = Lexem::MULTIPLY;
+            }
+            else if(type == "/"){
+                lex.op = Lexem::DIVIDE;
+            }
+            else if(type == "^"){
+                lex.op = Lexem::POW;
+            }
+            else if(type == "sqrt"){
+                lex.op = Lexem::SQRT;
+            }
 
             if (operators.empty())
             {
                 operators.push(lex);
             }
-
             else
             {
                 if (line[i] == "(")
@@ -51,13 +89,13 @@ vector<Lexem> Postfix::getResultStack(vector<string> line)
                 }
                 else if (line[i] != ")")
                 {
-                    if (priority(operators.top().type) < priority(type))
+                    if (priorityLexem(operators.top()) < priorityLine(type))
                     {
                         operators.push(lex);
                     }
                     else
                     {   
-                        while (!operators.empty() && (priority(operators.top().type) >= priority(type)))
+                        while (!operators.empty() && (priorityLexem(operators.top()) >= priorityLine(type)))
                         {
                             Lexem topLex = operators.top();
                             result.push_back(topLex);
@@ -68,7 +106,7 @@ vector<Lexem> Postfix::getResultStack(vector<string> line)
                 }
                 else
                 {
-                    while (operators.top().type != "(")
+                    while (operators.top().op!= Lexem::OPEN_BRACKET)
                     {
                         Lexem topLex = operators.top();
                         result.push_back(topLex);
@@ -89,5 +127,3 @@ vector<Lexem> Postfix::getResultStack(vector<string> line)
 
     return result;
 }
-
-// 1+2*sqrt(4)+2^3

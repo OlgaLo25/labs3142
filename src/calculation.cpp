@@ -1,35 +1,32 @@
 #include "calculation.h"
 
-//1+2^3
-
-//123^+
 double Calculation::getCalculation(vector<Lexem> resultVector)
 {
     double result;
 
     for (int i = 0; i < resultVector.size(); i++)
     {
-        if (isOperand(resultVector[i].type))
+        if (isOperand(resultVector[i]))
         {
-            if (resultVector[i].type != "sqrt")
+            if (resultVector[i].op != resultVector[i].SQRT)
             {
-                if (resultVector[i].type == "+")
+                if (resultVector[i].op == resultVector[i].ADD)
                 {
                     result = resultVector[i - 2].value + resultVector[i - 1].value;
                 }
-                else if (resultVector[i].type == "-")
+                else if (resultVector[i].op == resultVector[i].SUBSTRACT)
                 {
                     result = resultVector[i - 2].value - resultVector[i - 1].value;
                 }
-                else if (resultVector[i].type == "*")
+                else if (resultVector[i].op == resultVector[i].MULTIPLY)
                 {
                     result = resultVector[i - 2].value * resultVector[i - 1].value;
                 }
-                else if (resultVector[i].type == "/")
+                else if (resultVector[i].op == resultVector[i].DIVIDE)
                 {
                     result = resultVector[i - 2].value / resultVector[i - 1].value;
                 }
-                else if (resultVector[i].type == "^")
+                else if (resultVector[i].op == resultVector[i].POW)
                 {
                     result = pow(resultVector[i - 2].value, resultVector[i - 1].value);
                 }
@@ -38,7 +35,7 @@ double Calculation::getCalculation(vector<Lexem> resultVector)
                 resultVector.erase(resultVector.begin()+i-2);
                 
                 i = i-2;
-                Lexem lexInserted{"0",result};
+                Lexem lexInserted{Lexem::NUMBER,result};
 
                 resultVector.insert(resultVector.begin()+i,lexInserted);
             }
@@ -48,7 +45,7 @@ double Calculation::getCalculation(vector<Lexem> resultVector)
                 resultVector.erase(resultVector.begin()+i);
                 resultVector.erase(resultVector.begin()+i-1);
                 i = i-1;
-                Lexem lexInserted{"0",result};
+                Lexem lexInserted{Lexem::NUMBER,result};
 
                 resultVector.insert(resultVector.begin()+i,lexInserted);
             }

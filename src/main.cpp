@@ -8,19 +8,19 @@
 using namespace std;
 int main()
 {
-    char inputExample[] = "10+5*2-(3*sqrt(4))";
-    printf("The expression is: %s\n",inputExample);
-    
-    string input = "10+5*2-(3*sqrt(4))";
+    printf("Enter the expression\n");
+    string input;
+    cin >> input;
     vector<string> resultLine = splitLine(input);
-    
-    Postfix postfixres;
-    vector<Lexem> resultVector = postfixres.getResultStack(resultLine);
-    Calculation calc;
-   
-    printf("The result is: %.3f", calc.getCalculation(resultVector));
-    
-
-    // 2 * 3 + ( 3 - sqrt ( 4 ) )
+    if (checkTwoSigns(resultLine)==true)
+    {
+        Postfix postfixres;
+        vector<Lexem> resultVector = postfixres.getResultStack(resultLine);
+        Calculation calc;
+        printf("The result is: %.3f\n", calc.getCalculation(resultVector));
+    }
+    else{
+        printf("Incorrect expression\n");
+    }
     return 0;
 };

@@ -5,10 +5,10 @@
 #include <cppunit/extensions/HelperMacros.h>
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
-
 #include "utils.h"
 #include "postfix.h"
 #include "calculation.h"
+using namespace std;
 
 class Test : public CPPUNIT_NS::TestCase
 {
@@ -23,16 +23,10 @@ public:
 protected:
 
   void testLab2(void) {
-    char inputExample[] = "1+2*3^3-7+(2-3)";
-    printf("The expression is: %s\n",inputExample);
-
-    vector<string> resultLine = splitLine("1+2*3^3-7+(2-3)");
-    
-    Postfix postfixres;
-    vector<Lexem> resultVector = postfixres.getResultStack(resultLine);
-    Calculation calc;
-       
-    CPPUNIT_ASSERT(calc.getCalculation(resultVector)==47.000);
+    string inputExample = "1+2*3^3-7+(2-3)";
+    cout<<"The expression is: "<<inputExample<<endl;
+    vector<string> resultLine = splitLine(inputExample);  
+    CPPUNIT_ASSERT(checkTwoSigns(resultLine)==true);
   }
 
 };
