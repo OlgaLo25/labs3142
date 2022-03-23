@@ -13,7 +13,7 @@ jobs:
       - name: install cppunit
         run: sudo apt install -y libcppunit-dev
       - name: make
-        run: make clean && make
+        run: make
       - name: make test
         run: make test
       - name: clean
