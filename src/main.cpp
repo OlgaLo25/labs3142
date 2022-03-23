@@ -7,9 +7,9 @@
 
 int main()
 {
-    // printf("Enter the expression\n");
-    string input;
-    std::cin >> input;
+    printf("Enter the expression\n");
+    string input(100, '\0');
+    scanf("%s", input.c_str());
     vector<string> resultLine = splitLine(input);
     if (checkTwoSigns(resultLine)==true)
     {
