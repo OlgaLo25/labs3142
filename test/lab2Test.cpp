@@ -24,7 +24,7 @@ protected:
 
   void testLab2(void) {
     string inputExample = "1+2*3^3-7+(2-3)";
-    std::cout<<"The expression is: "<<inputExample<<endl;
+    std::cout<<"\nThe expression is: "<<inputExample<<endl;
     vector<string> resultLine = splitLine(inputExample);  
     CPPUNIT_ASSERT(checkTwoSigns(resultLine)==true);
   }
