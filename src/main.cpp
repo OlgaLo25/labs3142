@@ -5,12 +5,11 @@
 #include "postfix.h"
 #include "calculation.h"
 
-using namespace std;
 int main()
 {
     // printf("Enter the expression\n");
-    string input="";
-    cin >> input;
+    string input;
+    std::cin >> input;
     vector<string> resultLine = splitLine(input);
     if (checkTwoSigns(resultLine)==true)
     {

@@ -8,7 +8,7 @@
 #include "utils.h"
 #include "postfix.h"
 #include "calculation.h"
-using namespace std;
+#include "string"
 
 class Test : public CPPUNIT_NS::TestCase
 {
@@ -24,7 +24,7 @@ protected:
 
   void testLab2(void) {
     string inputExample = "1+2*3^3-7+(2-3)";
-    cout<<"The expression is: "<<inputExample<<endl;
+    std::cout<<"The expression is: "<<inputExample<<endl;
     vector<string> resultLine = splitLine(inputExample);  
     CPPUNIT_ASSERT(checkTwoSigns(resultLine)==true);
   }
