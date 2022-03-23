@@ -22,5 +22,4 @@ int main()
     else{
         printf("Incorrect expression\n");
     }
-    return 0;
 };
