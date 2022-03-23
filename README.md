@@ -1,8 +1,12 @@
 # labs3142_lab_2
 The program is a simple calculator (not scientific) created with all program’s structure requirements. This program include:
+
 Structure.  Include the to variables (value and type-operator)
+
 Utils. The functions which do the manipulations in different classes. Can be applied to any method in the classes.
+
 Postfix. I chose the postfix method to create the calculator. This class transforms any expression to postfix using “stacks”. 
+
 Calculator. The class takes postfix expressions and calculates them.
 
 All these classes have the “header” files with the constructor and “cpp” files for actions and manipulations (all logic is in cpp files) . 
