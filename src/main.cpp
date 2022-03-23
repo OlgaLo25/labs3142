@@ -8,8 +8,8 @@
 using namespace std;
 int main()
 {
-    printf("Enter the expression\n");
-    string input;
+    // printf("Enter the expression\n");
+    string input="";
     cin >> input;
     vector<string> resultLine = splitLine(input);
     if (checkTwoSigns(resultLine)==true)
