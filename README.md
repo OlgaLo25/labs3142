@@ -7,7 +7,8 @@ Author: Olga Chsherbakova
 # labs3142_lab_2
 The program is a simple calculator (not scientific) created with all program’s structure requirements. This program include:
 
-Structure.  Include the to variables (value and type-operator)
+Structure.  Include the enum {ADD, SUBSTRACT, MULTIPLY, DIVIDE, SQRT, POW, OPEN_BRACKET, NUMBER} op;
+This structure gives the opotunity easier to manipulate with giving cheraters
 
 Utils. The functions which do the manipulations in different classes. Can be applied to any method in the classes.
 
