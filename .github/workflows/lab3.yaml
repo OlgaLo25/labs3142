@@ -1,0 +1,20 @@
+name: C++ CI for hello world
+
+on:
+  push:
+    branches: [lab_3]  # limit to main branch
+
+jobs:
+  build-and-test-helloworld:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: install cppunit
+        run: sudo apt install -y libcppunit-dev
+      - name: make
+        run: make
+      - name: make test
+        run: make test
+      - name: clean
+        run: make clean
