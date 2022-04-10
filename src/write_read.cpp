@@ -1,107 +1,20 @@
 #include "write_read.h"
 
-// void write(vector<Student> &students)
-// {
-//     ofstream out("output.txt");
-
-//     if (out.is_open())
-//     {
-//         for (int i = 0; i < students.size(); i++)
-//         {
-//             out << students[i].id << " " << students[i].course.id << " " << students[i].course.courseNumber << " " << students[i].course.sectionCode
-//                 << " " << students[i].course.term.id
-//                 << " " << students[i].course.term.name << " " << students[i].grade;
-//         }
-
-//         out.close();
-//     }
-// }
-
-
-// vector<Student> read()
-// {
-//     vector<Student> students;
-//     ifstream in("output.txt");
-//     if (in.is_open())
-//     {
-//         string line;
-//         bool skipFirstLine = true;
-//         while (getline(in, line))
-//         {
-//             if (skipFirstLine)
-//             {
-//                 skipFirstLine = false;
-//                 continue;
-//             }
-//             vector<string> lineSplit = split(line, ',');
-//             int studentId;
-//             stringToSomething<string, int>(lineSplit.at(0), studentId);
-
-//             int courseId;
-//             stringToSomething<string, int>(lineSplit.at(1), courseId);
-
-//             int courseNumber;
-//             stringToSomething<string, int>(lineSplit.at(2), courseNumber);
-
-//             string sectionCode = lineSplit.at(3);
-
-//             int termId;
-//             stringToSomething<string, int>(lineSplit.at(4), termId);
-
-//             string termName = lineSplit.at(5);
-
-//             char grade;
-//             stringToSomething<string, char>(lineSplit.at(6), grade);
-
-//             Term term{termId, termName};
-//             Course course{courseId, courseNumber, sectionCode, term};
-//             Student student{studentId, course, grade};
-
-//             students.push_back(student);
-//         }
-//     }
-
-//     return students;
-// }
-
-vector<dataPerCourse> readCSV()
+void writeData(vector<dataPerCourse> &data)
 {
-    vector<dataPerCourse> data;
-
-    string files[3] = {"../data/1115.csv", "../data/3115.csv", "../data/3130.csv"};
-
-    for (int i = 0; i < 3; i++)
+    ofstream out("outputUpdated.txt");
+    char *enumStrings[] = {"A", "A+", "A-", "AUD", "B", "B+", "B-", "C", "C+", "C-", "CR", "D", "D+", "D-", "F", "FIN", "INC", "NC", "P", "W", "WD", "WN", "WU"};
+    if (out.is_open())
     {
-        ifstream in(files[i]);
-        if (in.is_open())
+        for (int i = 0; i < data.size(); i++)
         {
-            string line;
-            bool skipFirstLine = true;
-            while (getline(in, line))
-            {
-                if (skipFirstLine)
-                {
-                    skipFirstLine = false;
-                    continue;
-                }
-                vector<string> lineSplit = split(line, ',');
-                string emplid = lineSplit[0];
-
-                int courseno;
-                stringToSomething<string, int>(lineSplit.at(1), courseno);
-
-                string instructorid = lineSplit[2];
-                string termid = lineSplit[3];
-                string sectionid = lineSplit[4];
-                string grade = lineSplit[5];
-                
-
-                dataPerCourse row{emplid, courseno, instructorid, termid, sectionid, getEnumIndex(grade)};
-                data.push_back(row);
-            }
+            out << data[i].emplid << " " << data[i].courseno << " " << data[i].instructorid << " " << data[i].termid
+                << " " << data[i].sectionid
+                << " " << enumStrings[data[i].grade] << endl;
         }
+
+        out.close();
     }
-    return data;
 }
 
 void write(string result)
@@ -113,5 +26,60 @@ void write(string result)
         out << result;
         out.close();
     }
-    
+}
+
+void readUpdated(vector<dataPerCourse> &data, char delimeter, string filename)
+{
+    ifstream in(filename);
+    if (in.is_open())
+    {
+        string line;
+        bool skipFirstLine = true;
+        while (getline(in, line))
+        {
+            if (skipFirstLine && delimeter == ',')
+            {
+                skipFirstLine = false;
+                continue;
+            }
+            vector<string> lineSplit = split(line, delimeter);
+            string emplid = lineSplit[0];
+
+            int courseno;
+            stringToSomething<string, int>(lineSplit.at(1), courseno);
+
+            string instructorid = lineSplit[2];
+            string termid = lineSplit[3];
+            string sectionid = lineSplit[4];
+            string grade = lineSplit[5];
+
+            dataPerCourse row{emplid, courseno, instructorid, termid, sectionid, getEnumIndex(grade)};
+            data.push_back(row);
+        }
+    }
+    in.close();
+}
+
+vector<dataPerCourse> readCSV()
+{
+    vector<dataPerCourse> data;
+
+    string outputFile = "../output/outputUpdated.txt";
+    int length = 3;
+    string files[length] = {"../data/1115.csv", "../data/3115.csv", "../data/3130.csv"};
+
+    ifstream in;
+    in.open(outputFile);
+    if (in)
+    {
+        readUpdated(data, ' ', outputFile);
+    }
+    else
+    {
+        for(int i = 0;i<length;i++){
+            readUpdated(data, ',', files[i]);
+        }
+    }
+    in.close();
+    return data;
 }

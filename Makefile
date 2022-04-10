@@ -20,7 +20,7 @@ SRCS_TEST = $(wildcard $(SRC_TEST)/*.cpp)
 OBJS_TEST= $(filter-out $(OBJ)/main.o, $(OBJS)) $(SRCS_TEST:$(SRC_TEST)/%.cpp=$(OBJ)/%.o)
 
 
-lab_3:$(BIN)
+lab3:$(BIN)
 	cd $(BINDIR) && ./main
 
 $(BIN): $(OBJS)

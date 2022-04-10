@@ -10,9 +10,9 @@ using namespace std;
 // A, A+, A-, AUD, B, B+, B-, C, C+, C-, CR, D, D+, D-, F, FIN, INC, NC, P, W, WD, WN, WU
  enum Grades
     {
-        A_plus,A,A_minus,AUD,
-        B_plus,B,B_minus,
-        C_plus,C,C_minus,CR,
+        A,A_plus,A_minus,AUD,
+        B,B_plus,B_minus,
+        C,C_plus,C_minus,CR,
         D,D_plus,D_minus,
         F,FIN,
         INC,NC,

@@ -8,7 +8,9 @@
 // void write(vector<Student> &students);
 // void write(Student &student);
 // vector<Student> read();
-vector<dataPerCourse> readCSV();
+void writeData(vector<dataPerCourse> &data);
 void write(string result);
+void readUpdated(vector<dataPerCourse> &data,char delimeter,string filename);
+vector<dataPerCourse> readCSV();
 
 #endif

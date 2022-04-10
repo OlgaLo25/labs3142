@@ -135,12 +135,6 @@ void printData(vector<dataPerCourse> &data)
     }
 }
 
-string IntToString(int number)
-{
-    stringstream temp;
-    temp << number;
-    return temp.str();
-}
 
 bool checkStudent(string id,vector<dataPerCourse> &data){
     for(int i = 0; i < data.size(); i++){

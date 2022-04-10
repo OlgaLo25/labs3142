@@ -20,7 +20,12 @@ Grades getEnumIndex( string grade);
 
 void printData(vector<dataPerCourse> &data);
 
-string IntToString(int number);
+template <typename Number>
+string IntToString(Number number){
+    stringstream temp;
+    temp << number;
+    return temp.str();
+}
 
 bool checkStudent(string id,vector<dataPerCourse> &data);
 

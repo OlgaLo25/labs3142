@@ -10,10 +10,11 @@ class Controller
 {
 private:
     vector<dataPerCourse> data;
-    void enroll();
+    
 
 public:
     Controller(vector<dataPerCourse> &data);
+    void enroll();
     void update();
     void searchStudent(string emplId);
 };

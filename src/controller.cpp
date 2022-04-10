@@ -7,7 +7,7 @@ Controller::Controller(vector<dataPerCourse> &data)
 
 void Controller::searchStudent(string emplId)
 {
-    if (checkStudent(emplId,data))
+    if (checkStudent(emplId, data))
     {
         dataPerCourse student;
         printf("The student's Id is %s\n", emplId.c_str());
@@ -28,60 +28,79 @@ void Controller::searchStudent(string emplId)
             }
         }
     }
-    else{
+    else
+    {
         printf("No such student");
         write("No such student");
     }
 }
 
+/*
+A user-defined class with methods for enrollment operations
+A constructor for define a new enrollment (i.e. it creates a student object with a new course). The enrollment should not be publicly accessible
+Method(s) for updating objects (i.e. update grades for the student object(s))
+
+*/
 void Controller::enroll()
 {
-    // int studentId;
-    // int courseId;
-    // int courseNumber;
-    // string sectionCode;
-    // int termId;
-    // string termName;
-    // char grade;
 
-    // cout<<"Enter the student's ID "<<endl;
-    // cin>>studentId;
-    // cout<<"Enter the course ID "<<endl;
-    // cin>>courseId;
-    // cout<<"Enter the course number "<<endl;
-    // cin>>courseNumber;
-    // cout<<"Enter the course section code "<<endl;
-    // cin>>sectionCode;
-    // cout<<"Enter the course term ID "<<endl;
-    // cin>>termId;
-    // cout<<"Enter the course term name "<<endl;
-    // cin>>termName;
-    // cout<<"Enter the student`s grade "<<endl;
-    // cin>>grade;
+    string emplId;
+    int courseno;
+    string instructorId;
+    string termId;
+    string sectionId;
+    string grade;
 
-    // Term term{termId,termName};
-    // Course course{courseId,courseNumber,sectionCode,term};
-    // Student student{studentId,course,grade};
+    cout << "Enter the student's ID " << endl;
+    cin >> emplId;
 
-    // write(student); //IP
+    if (checkStudent(emplId, data) == false)
+    {
+        cout << "Enter the course number " << endl;
+        cin >> courseno;
+        cout << "Enter the instructor ID " << endl;
+        cin >> instructorId;
+        cout << "Enter the course term ID " << endl;
+        cin >> termId;
+        cout << "Enter the course section ID " << endl;
+        cin >> sectionId;
+        cout << "Enter the student`s grade " << endl;
+        cin >> grade;
+        Grades enumGrade = getEnumIndex(grade);
+        dataPerCourse enrollData{emplId, courseno, instructorId, termId, sectionId, enumGrade};
+        data.push_back(enrollData);
+        writeData(data);
+    }
+    else
+    {
+        cout << "Student already exists" << endl;
+    }
 }
 
 void Controller::update()
 {
-    // int studentId;
-    // char newGrade;
-    // cout<<"Enter the id of student to change the grade"<<endl;
-    // cin>>studentId;
-    // cout<<"Enter updated grade"<<endl;
-    // cin>>newGrade;
+    string emplId;
+    cout << "Enter student's ID to update the grade" << endl;
+    cin >> emplId;
 
-    // vector<Student> students = read();
-    // vector<Student>::iterator it = students.begin();//указатель на элемент вектора
-    // for(it; it!=students.end(); it++){
-    //     if(studentId==it->id){
-    //         it->grade=newGrade;
-    //     }
-    // }
+    if (checkStudent(emplId, data) == true)
+    {
+        cout << "Enter updated grade" << endl;
+        string newGrade;
+        cin >> newGrade;
+        Grades grade = getEnumIndex(newGrade);
 
-    // write(students);
+        vector<dataPerCourse>::iterator it = data.begin(); //указатель на элемент вектора
+        for (it; it != data.end(); it++)
+        {
+            if (emplId == it->emplid)
+            {
+                it->grade = grade;
+            }
+        }
+        writeData(data);
+    }
+    else{
+        cout<<"Student doesnt exist"<<endl;
+    }
 }

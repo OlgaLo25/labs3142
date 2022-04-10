@@ -156,14 +156,16 @@ set<string> Calculation::getInstructors()
 
 void Calculation::instructorPassRate(string instructorId)
 {
+    int totalStudents = 0;
     int studentsPass = 0;
     int studentsFail = 0;
     int studentsUnknown = 0;
+    double passRate = 0;
     for (int i = 0; i < data.size(); i++)
     {
         if (data[i].instructorid == instructorId)
         {
-
+            totalStudents++;
             if (isPass(data[i].grade) == 1)
             {
                 studentsPass++;
@@ -179,10 +181,13 @@ void Calculation::instructorPassRate(string instructorId)
         }
     }
 
-    printf("Instructor id - %s\t The quantity of students pass - %d\t The quantity of students fail - %d\t Other students - %d\n",
-           instructorId.c_str(), studentsPass, studentsFail, studentsUnknown);
+    passRate = (studentsPass * 100)/totalStudents;
 
-    string result = "Instructor id - " + instructorId + "\t The quantity of students pass - " + IntToString(studentsPass) + "\t The quantity of students fail - " + IntToString(studentsFail) + "\t Other students - " + IntToString(studentsUnknown) + "\n";
+    printf("Instructor id - %s\t The quantity of students pass - %d\t The quantity of students fail - %d\t Other students - %d\t Percent of students passed - %.0f%%\n",
+           instructorId.c_str(), studentsPass, studentsFail, studentsUnknown, passRate);
+
+    string result = "Instructor id - " + instructorId + "\t The quantity of students pass - " + IntToString(studentsPass) + "\t The quantity of students fail - " + IntToString(studentsFail) + "\t Other students - " + IntToString(studentsUnknown)
+     +"\t Percent of students passed "+ IntToString(passRate)+"%\n";
     write(result);
 }
 
