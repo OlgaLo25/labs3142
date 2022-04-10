@@ -27,7 +27,7 @@ public:
 protected:
 
   void testInstructor(void) {
-    CPPUNIT_ASSERT(checkInstructor("I28",data)==true);
+    CPPUNIT_ASSERT(checkInstructor("II28",data)==false);
   }
 
   void testStudent(void) {
@@ -58,5 +58,5 @@ int main()
   runner.addTest(CPPUNIT_NS::TestFactoryRegistry::getRegistry().makeTest());
   runner.run(controller);
 
-  return 0;
+  return  0;
 }
