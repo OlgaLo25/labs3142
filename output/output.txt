@@ -1,2 +1,51 @@
 The maximum quantity of A grade is: 353 on the 3130 course
 
+The quantity of students enrolled to course CISC 1115 is: 2916
+The quantity of students enrolled to course CISC 3115 is: 1280
+The quantity of students enrolled to course CISC 3130 is: 997
+
+Instructor id - I01	 The quantity of students pass - 162	 The quantity of students fail - 28	 Other students - 75	 Percent of students passed 61%
+Instructor id - I02	 The quantity of students pass - 75	 The quantity of students fail - 38	 Other students - 37	 Percent of students passed 50%
+Instructor id - I03	 The quantity of students pass - 36	 The quantity of students fail - 1	 Other students - 3	 Percent of students passed 90%
+Instructor id - I04	 The quantity of students pass - 31	 The quantity of students fail - 16	 Other students - 41	 Percent of students passed 35%
+Instructor id - I06	 The quantity of students pass - 55	 The quantity of students fail - 4	 Other students - 10	 Percent of students passed 79%
+Instructor id - I07	 The quantity of students pass - 335	 The quantity of students fail - 4	 Other students - 38	 Percent of students passed 88%
+Instructor id - I08	 The quantity of students pass - 157	 The quantity of students fail - 67	 Other students - 129	 Percent of students passed 44%
+Instructor id - I10	 The quantity of students pass - 122	 The quantity of students fail - 9	 Other students - 8	 Percent of students passed 87%
+Instructor id - I11	 The quantity of students pass - 38	 The quantity of students fail - 12	 Other students - 12	 Percent of students passed 61%
+Instructor id - I12	 The quantity of students pass - 172	 The quantity of students fail - 31	 Other students - 93	 Percent of students passed 58%
+Instructor id - I14	 The quantity of students pass - 184	 The quantity of students fail - 18	 Other students - 29	 Percent of students passed 79%
+Instructor id - I15	 The quantity of students pass - 118	 The quantity of students fail - 7	 Other students - 46	 Percent of students passed 69%
+Instructor id - I16	 The quantity of students pass - 153	 The quantity of students fail - 66	 Other students - 93	 Percent of students passed 49%
+Instructor id - I17	 The quantity of students pass - 48	 The quantity of students fail - 14	 Other students - 5	 Percent of students passed 71%
+Instructor id - I18	 The quantity of students pass - 347	 The quantity of students fail - 62	 Other students - 140	 Percent of students passed 63%
+Instructor id - I19	 The quantity of students pass - 273	 The quantity of students fail - 21	 Other students - 40	 Percent of students passed 81%
+Instructor id - I20	 The quantity of students pass - 151	 The quantity of students fail - 28	 Other students - 61	 Percent of students passed 62%
+Instructor id - I21	 The quantity of students pass - 193	 The quantity of students fail - 65	 Other students - 95	 Percent of students passed 54%
+Instructor id - I22	 The quantity of students pass - 68	 The quantity of students fail - 4	 Other students - 16	 Percent of students passed 77%
+Instructor id - I23	 The quantity of students pass - 127	 The quantity of students fail - 9	 Other students - 25	 Percent of students passed 78%
+Instructor id - I24	 The quantity of students pass - 29	 The quantity of students fail - 3	 Other students - 3	 Percent of students passed 82%
+Instructor id - I25	 The quantity of students pass - 19	 The quantity of students fail - 3	 Other students - 8	 Percent of students passed 63%
+Instructor id - I26	 The quantity of students pass - 20	 The quantity of students fail - 3	 Other students - 7	 Percent of students passed 66%
+Instructor id - I27	 The quantity of students pass - 149	 The quantity of students fail - 11	 Other students - 18	 Percent of students passed 83%
+Instructor id - I28	 The quantity of students pass - 217	 The quantity of students fail - 129	 Other students - 229	 Percent of students passed 37%
+
+Course Number - 1115	 The quantity of students pass - 1525	 The quantity of students fail - 491	 Other students - 900
+Course Number - 3115	 The quantity of students pass - 963	 The quantity of students fail - 88	 Other students - 229
+Course Number - 3130	 The quantity of students pass - 791	 The quantity of students fail - 74	 Other students - 132
+
+Term Id - T04	 The quantity of students pass in Fall - 165	 The quantity of students fail - 58	 Other students - 76
+Term Id - T05	 The quantity of students pass in T05 - 289	 The quantity of students fail - 71	 Other students - 133
+Term Id - T07	 The quantity of students pass in T07 - 43	 The quantity of students fail - 13	 Other students - 13
+Term Id - T08	 The quantity of students pass in Fall - 384	 The quantity of students fail - 88	 Other students - 100
+Term Id - T09	 The quantity of students pass in T09 - 414	 The quantity of students fail - 119	 Other students - 117
+Term Id - T11	 The quantity of students pass in T11 - 74	 The quantity of students fail - 20	 Other students - 13
+Term Id - T12	 The quantity of students pass in Fall - 441	 The quantity of students fail - 86	 Other students - 132
+Term Id - T13	 The quantity of students pass in T13 - 401	 The quantity of students fail - 18	 Other students - 273
+Term Id - T15	 The quantity of students pass in T15 - 84	 The quantity of students fail - 10	 Other students - 20
+Term Id - T16	 The quantity of students pass in Fall - 469	 The quantity of students fail - 95	 Other students - 155
+Term Id - T17	 The quantity of students pass in T17 - 453	 The quantity of students fail - 69	 Other students - 209
+Term Id - T19	 The quantity of students pass in T19 - 62	 The quantity of students fail - 6	 Other students - 20
+
+The student's Id is E0420
+Course - 1115; Instructor Id - I18; Term - T04; Section Id - S13; Grade - B
