@@ -1,15 +1,43 @@
 #ifndef UTILS_H
 #define UTILS_H
-#include "structure.h"
+#include "structures.h"
 #include <vector>
-#include <string>
-
+#include <map>
+#include <sstream>
+#include <iostream>
 using namespace std;
 
-bool checkTwoSigns(vector<string> input);
-bool isOperandLine(string type);
-bool isOperand(Lexem lex);
-vector<string> splitLine(string input);
-vector<string> split(string line,char delimeter);
+//Common functions
+vector<string> split(string s, char delim);
+
+int isPass(Grades grade);
+
+map<Grades, int> dataGrade(int courseno,vector<dataPerCourse> &data);
+
+string fallOrSpring(string termId);
+
+Grades getEnumIndex( string grade);
+
+void printData(vector<dataPerCourse> &data);
+
+template <typename Number>
+string IntToString(Number number){
+    stringstream temp;
+    temp << number;
+    return temp.str();
+}
+
+bool checkStudent(string id,vector<dataPerCourse> &data);
+
+bool checkCourse(int id);
+
+bool checkInstructor(string id,vector<dataPerCourse> &data);
+//Шаблонные функции всегда надо реализовывать в headers file
+template <typename Text, typename TypeToConvert>
+void stringToSomething(Text stringText, TypeToConvert &typeConvert)
+{
+    stringstream syear(stringText);
+    syear >> typeConvert;
+}
 
 #endif

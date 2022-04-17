@@ -1,2 +1,3 @@
-obj/main.o: src/main.cpp include/utils.h include/structure.h \
- include/postfix.h include/utils.h include/calculation.h
+obj/main.o: src/main.cpp include/controller.h include/structures.h \
+ include/write_read.h include/utils.h include/write_read.h \
+ include/calculations.h
