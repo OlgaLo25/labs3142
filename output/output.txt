@@ -1,4 +1,3 @@
-
 Start time Sun Apr 24 11:06:36 2022
 The maximum quantity of A grade is: 353 on the 3130 course
 
