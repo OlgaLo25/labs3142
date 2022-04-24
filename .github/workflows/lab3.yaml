@@ -12,6 +12,8 @@ jobs:
       
       - name: install cppunit
         run: sudo apt install -y libcppunit-dev
+      - name: install gcc_multilib
+        run: sudo apt-get install gcc-multilib g++-multilib
       - name: make
         run: make
       - name: make test
