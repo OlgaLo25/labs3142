@@ -4,19 +4,18 @@ The main branch for the labs CISC 3142
 
 Author: Olga Chsherbakova
 =======
-# labs3142_lab_2
-The program is a simple calculator (not scientific) created with all program’s structure requirements. This program include:
+# labs3142_lab_3
+This is programming assignment exposed to OOP paradigm, as well as practice with refactoringcode to make it more maintainable.
+This program include:
+Folders: data, include, obj, ouput, src and test.
+  "include" consists of .h files wich include the stracter and declared methods with private and public fields.
+  "controller" consists with the declare the functions which can controll data.
+  "structure" include the enum with grades and structure of data
+  "utils" include the regular functions which do the manipulations in different classes. Can be applied to any method in the classes.
+  "write_read" declare the methods for write and read files
 
-Structure.  Include the enum {ADD, SUBSTRACT, MULTIPLY, DIVIDE, SQRT, POW, OPEN_BRACKET, NUMBER} op;
-This structure gives the opotunity easier to manipulate with giving cheraters
+Every header file has .cpp file, where all logic presents. 
 
-Utils. The functions which do the manipulations in different classes. Can be applied to any method in the classes.
-
-Postfix. I chose the postfix method to create the calculator. This class transforms any expression to postfix using “stacks”. 
-
-Calculator. The class takes postfix expressions and calculates them.
-
-All these classes have the “header” files with the constructor and “cpp” files for actions and manipulations (all logic is in cpp files) . 
 
 The “Main” is for input files, which can be done from the keyboard, file, or any other method. On this program the input was done as an expression in the method itself for tests, but it can easily change. Also calling “Postfix.h” and “Calculator.h” are done from the “main''.
 
