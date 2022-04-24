@@ -1,4 +1,4 @@
-CC = gcc-4.6
+CC = g++ -m32 -Xlinker --verbose
 CFLAGS = -Wall -g
 
 SRC = src
