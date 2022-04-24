@@ -8,21 +8,21 @@ Author: Olga Chsherbakova
 This is a programming assignment exposed to the OOP paradigm, as well as practice with refactoring code to make it more maintainable.
 This program include:
 Folders: data, include, obj, output, src and test.
-<br />"include" consists of .h files which include the structure and declared methods with private and public fields.
-<br />"controller" consists of declaring the functions which can control data.
-<br />"structure" include the enum with grades and structure of data
-<br />"utils" include the regular functions which do the manipulations in different classes. Can be applied to any method in the classes.
-<br />"write_read" declare the methods for write and read files
+<br />__"include"__ consists of .h files which include the structure and declared methods with private and public fields.
+<br />__"controller"__ consists of declaring the functions which can control data.
+<br />__"structure"__ include the enum with grades and structure of data
+<br />__"utils"__ include the regular functions which do the manipulations in different classes. Can be applied to any method in the classes.
+<br />__"write_read"__ declare the methods for write and read files
 
 Every header file has a .cpp file, where all logic is present.
-<br />"calculation.cpp"  includes all methods for calculating the data. The methods are very similar to each other and use the same data structure.
-<br />"controller.cpp" was created to control enrollment (add students to the data), update student's grade and search all information about the student.
-<br />Controller has the different purpose from the calculation because it's control and upgrade the data file, but calculation.cpp only use the data file to give us the information.
-<br />"utils.cpp" includes standard methods such as: "split"-separate the data, assign and add to the vector, "dataGrade"- assign grades to enum.
-<br />"isPass" - which grade is associated with pass or fail which, "printData"-this method can work for any vector passed. Utils help to keep the main code logic cleaner.
-<br />"write_read" include the methods for working with data such as read and write. It includes as standard methods which can be used in any other program, as a special method only for these data files.
+<br />__"calculation.cpp"__  includes all methods for calculating the data. The methods are very similar to each other and use the same data structure.
+<br />__"controller.cpp"__ was created to control enrollment (add students to the data), update student's grade and search all information about the student.
+Controller has the different purpose from the calculation because it's control and upgrade the data file, but calculation.cpp only use the data file to give us the information.
+<br />__"utils.cpp"__ includes standard methods such as: "split"-separate the data, assign and add to the vector, "dataGrade"- assign grades to enum.
+<br />"isPass"__ - which grade is associated with pass or fail which, "printData"-this method can work for any vector passed. Utils help to keep the main code logic cleaner.
+<br />__"write_read"__ include the methods for working with data such as read and write. It includes as standard methods which can be used in any other program, as a special method only for these data files.
 
-The “Main” includes a while-switch loop for 8 cases and exit from the program. In the loop the methods for each case are called. Also the main method includes the Chrono system clock, so we can control when the output file is updated.
+The __“Main”__ includes a while-switch loop for 8 cases and exit from the program. In the loop the methods for each case are called. Also the main method includes the Chrono system clock, so we can control when the output file is updated.
 
 The main purpose of this program was to make a structured program with Makefile and Test.
 Makefile does all actions with the program such as, compile is, makes .cpp files, object .o files, and runs the test file. At the end, Makefile cleans all files which were created during its run. 
