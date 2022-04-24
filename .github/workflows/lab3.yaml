@@ -12,10 +12,8 @@ jobs:
       
       - name: install cppunit
         run: sudo apt install -y libcppunit-dev
-      - name: install i386
-        run: sudo apt-get install libc6-dev:i386 libx11-dev:i386 libxext-dev:i386 lib32gcc-7-dev
       - name: install gcc_multilib
-        run: sudo apt-get install gcc-multilib g++-multilib
+        run: sudo apt install build-essential gcc-multilib libx11-dev libx11-dev:i386 glslang-tools spirv-tools g++-multilib
       - name: make
         run: make
       - name: make test
