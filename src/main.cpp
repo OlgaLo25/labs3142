@@ -2,7 +2,7 @@
 #include "write_read.h"
 #include "calculations.h"
 #include <chrono>
-
+using namespace std::chrono;
 // все записать в файл
 // проверка на студента, курс, на инструктора
 // тесты добавить
@@ -13,9 +13,10 @@ void commands()
     Calculation calc(data);
     Controller controller(data);
 
-    cout<<"Enter 1 - for maximum quantity of A grade students \nEnter 2 - for student`s quantity per course \n"<<
-    "Enter 3 - for pass rate \nEnter 4 - for instructor pass rate \nEnter 5 - for course pass rate \n"<<
-    "Enter 6 - search student \nEnter 7 - enroll student \nEnter 8 - update student info\nEnter 0 - for exit \n"<<endl;
+    cout << "Enter 1 - for maximum quantity of A grade students \nEnter 2 - for student`s quantity per course \n"
+         << "Enter 3 - for pass rate \nEnter 4 - for instructor pass rate \nEnter 5 - for course pass rate \n"
+         << "Enter 6 - search student \nEnter 7 - enroll student \nEnter 8 - update student info\nEnter 0 - for exit \n"
+         << endl;
 
     string instructorId;
     int courseno;
@@ -69,14 +70,21 @@ int main()
 {
     auto start = std::chrono::system_clock::now();
     time_t start_time = chrono::system_clock::to_time_t(start);
-    cout<<"\nStart time "<<ctime(&start_time)<<endl;
-    commands();
-    auto end = chrono::system_clock::now();
-    chrono::duration<double> elapsed_seconds = end-start;
-    time_t end_time = chrono::system_clock::to_time_t(end);
+    string timeStart = ctime(&start_time);
 
-    cout << "\nFinished computation at " << ctime(&end_time)
-              << "elapsed time: " << elapsed_seconds.count() << "s\n";
-    
+    cout << "\nStart time " << timeStart << endl;
+    write("\nStart time " + timeStart);
+
+    commands();
+
+    auto end = chrono::system_clock::now();
+    chrono::duration<double> elapsed_seconds = end - start;
+    time_t end_time = chrono::system_clock::to_time_t(end);
+    string endTime = ctime(&end_time);
+    string duration = IntToString(elapsed_seconds.count());
+
+    cout << "\nFinished computation at " << endTime
+         << "elapsed time: " << duration << "s\n";
+    write("\nFinished computation at " + endTime + "elapsed time: " + duration + "s\n");
     return 0;
 }

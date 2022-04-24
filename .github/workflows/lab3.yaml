@@ -2,7 +2,7 @@ name: C++ CI for hello world
 
 on:
   push:
-    branches: [lab_3]  # limit to main branch
+    branches: [main]  # limit to main branch
 
 jobs:
   build-and-test-helloworld:
