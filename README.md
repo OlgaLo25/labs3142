@@ -17,7 +17,7 @@ Folders: data, include, obj, output, src and test.
 Every header file has a .cpp file, where all logic is present.
 	"calculation.cpp"  includes all methods for calculating the data. The methods are very similar to each other and use the same data structure.
 	"controller.cpp" was created to control enrollment (add students to the data), update student's grade and search all information about the student.
-	Controller has the different purpose from the calculation because it's control and upgrade the data file, but calculation.cpp only use the data 		file to give us the information.
+	Controller has the different purpose from the calculation because it's control and upgrade the data file, but calculation.cpp only use the data file to give us the information.
 	"utils.cpp" includes standard methods such as: "split"-separate the data, assign and add to the vector, "dataGrade"- assign grades to enum.
 	"isPass" - which grade is associated with pass or fail which, "printData"-this method can work for any vector passed. Utils help to keep the main code logic cleaner.
 	"write_read" include the methods for working with data such as read and write. It includes as standard methods which can be used in any other program, as a special method only for these data files.
