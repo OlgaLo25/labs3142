@@ -1,4 +1,5 @@
-Start time Sun Apr 24 11:06:36 2022
+
+Start time Sun Apr 24 11:31:52 2022
 The maximum quantity of A grade is: 353 on the 3130 course
 
 The quantity of students enrolled to course CISC 1115 is: 2916
@@ -48,8 +49,8 @@ Term Id - T16	 The quantity of students pass in Fall - 469	 The quantity of stud
 Term Id - T17	 The quantity of students pass in T17 - 453	 The quantity of students fail - 69	 Other students - 209
 Term Id - T19	 The quantity of students pass in T19 - 62	 The quantity of students fail - 6	 Other students - 20
 
-The student's Id is E0420
-Course - 1115; Instructor Id - I18; Term - T04; Section Id - S13; Grade - B
+The student's Id is E0508
+Course - 1115; Instructor Id - I12; Term - T04; Section Id - S10; Grade - W
 
-Finished computation at Sun Apr 24 11:11:35 2022
-elapsed time: 298.693s
+Finished computation at Sun Apr 24 11:35:00 2022
+elapsed time: 187.855s
